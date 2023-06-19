@@ -16,6 +16,8 @@
 ###
 FROM registry.access.redhat.com/ubi8/ubi-minimal:8.3
 WORKDIR /work/
+ENV JAVA_APP_JAR="/deployments/quarkus-run.jar"
+
 RUN chown 1001 /work \
     && chmod "g+rwX" /work \
     && chown 1001:root /work
@@ -26,7 +28,4 @@ USER 1001
 
 CMD ["./application", "-Dquarkus.http.host=0.0.0.0"]
 
-CMD java -Dquarkus.datasource.jdbc.url=jdbc:postgresql://localhost:5432/petclinic \
-    -Dquarkus.datasource.username=petclinic \
-    -Dquarkus.datasource.password=petclinic \
-    -jar target/quarkus-app/quarkus-run.jar
+
