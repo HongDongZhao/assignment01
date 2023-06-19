@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: petclinc-hd
-          image: petclinc-hd:latest
+          image: java-quarkus-image:latest
           ports:
             - name: http
               containerPort: 8081

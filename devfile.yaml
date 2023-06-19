@@ -21,7 +21,7 @@ metadata:
 components:
   - name: image-build
     image:
-      imageName: petclinc-hd:latest
+      imageName: java-quarkus-image:latest
       dockerfile:
         uri: src/main/docker/Dockerfile.jvm
         buildContext: .
