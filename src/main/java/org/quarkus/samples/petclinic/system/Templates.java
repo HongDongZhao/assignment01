@@ -4,11 +4,11 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-import org.quarkus.samples.petclinic.owner.Owner;
-import org.quarkus.samples.petclinic.owner.Pet;
-import org.quarkus.samples.petclinic.owner.PetType;
-import org.quarkus.samples.petclinic.vet.Vet;
-import org.quarkus.samples.petclinic.visit.Visit;
+import org.quarkus.samples.petclinic.model.Owner;
+import org.quarkus.samples.petclinic.model.Pet;
+import org.quarkus.samples.petclinic.model.PetType;
+import org.quarkus.samples.petclinic.model.Vet;
+import org.quarkus.samples.petclinic.model.visit.Visit;
 
 import io.quarkus.qute.CheckedTemplate;
 import io.quarkus.qute.TemplateInstance;

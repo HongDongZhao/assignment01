@@ -1,4 +1,4 @@
-package org.quarkus.samples.petclinic.vet;
+package org.quarkus.samples.petclinic.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

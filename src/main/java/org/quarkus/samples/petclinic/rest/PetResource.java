@@ -1,7 +1,10 @@
-package org.quarkus.samples.petclinic.owner;
+package org.quarkus.samples.petclinic.rest;
 
 
-import org.quarkus.samples.petclinic.system.Templates;
+import io.quarkus.security.Authenticated;
+import org.quarkus.samples.petclinic.model.PetType;
+import org.quarkus.samples.petclinic.model.Owner;
+import org.quarkus.samples.petclinic.model.Pet;
 import org.quarkus.samples.petclinic.system.TemplatesLocale;
 
 import java.time.LocalDate;
@@ -32,6 +35,7 @@ public class PetResource {
     @Inject
     Validator validator;
 
+    @Authenticated
     @GET
     @Path("{ownerId}/pets/new")
     @Produces(MediaType.TEXT_HTML)
@@ -39,6 +43,7 @@ public class PetResource {
         return templates.createOrUpdatePetForm(Owner.findById(ownerId), null, PetType.listAll(), new HashMap<>());
     }
 
+    @Authenticated
     @GET
     @Path("{ownerId}/pets/{petId}/edit")
     @Produces(MediaType.TEXT_HTML)
@@ -46,6 +51,7 @@ public class PetResource {
         return templates.createOrUpdatePetForm(Owner.findById(ownerId), Pet.findById(petId), PetType.listAll(), new HashMap<>());
     }
 
+    @Authenticated
     @POST
     @Path("{ownerId}/pets/new")
     @Produces(MediaType.TEXT_HTML)
@@ -77,6 +83,7 @@ public class PetResource {
         }
     }
 
+    @Authenticated
     @POST
     @Path("{ownerId}/pets/{petId}/edit")
     @Produces(MediaType.TEXT_HTML)

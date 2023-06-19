@@ -99,4 +99,6 @@ public interface AppMessages {
     @Message("Something happened...")
     String something_wrong();
 
+    @Message("Logout")
+    String logout_label();
 }

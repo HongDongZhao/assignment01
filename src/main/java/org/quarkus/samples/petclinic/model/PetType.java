@@ -1,4 +1,4 @@
-package org.quarkus.samples.petclinic.owner;
+package org.quarkus.samples.petclinic.model;
 
 import java.util.Collection;
 

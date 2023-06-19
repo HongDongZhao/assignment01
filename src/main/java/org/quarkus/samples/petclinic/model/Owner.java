@@ -1,4 +1,4 @@
-package org.quarkus.samples.petclinic.owner;
+package org.quarkus.samples.petclinic.model;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -13,8 +13,6 @@ import javax.persistence.Table;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotEmpty;
 import javax.ws.rs.FormParam;
-
-import org.quarkus.samples.petclinic.model.Person;
 
 @Entity
 @Table(name = "owners")

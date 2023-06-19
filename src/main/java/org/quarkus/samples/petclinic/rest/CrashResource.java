@@ -1,4 +1,4 @@
-package org.quarkus.samples.petclinic.system;
+package org.quarkus.samples.petclinic.rest;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

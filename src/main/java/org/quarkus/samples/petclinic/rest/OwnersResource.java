@@ -1,7 +1,10 @@
-package org.quarkus.samples.petclinic.owner;
+package org.quarkus.samples.petclinic.rest;
 
+import io.quarkus.security.Authenticated;
+import org.quarkus.samples.petclinic.model.Owner;
+import org.quarkus.samples.petclinic.model.Pet;
 import org.quarkus.samples.petclinic.system.TemplatesLocale;
-import org.quarkus.samples.petclinic.visit.Visit;
+import org.quarkus.samples.petclinic.model.visit.Visit;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -25,6 +28,7 @@ import javax.ws.rs.core.MediaType;
 
 import io.quarkus.qute.TemplateInstance;
 
+@Authenticated
 @Path("/owners")
 public class OwnersResource {
 
@@ -33,6 +37,7 @@ public class OwnersResource {
 
     @Inject
     Validator validator;
+
 
     @GET
     @Path("/find")
@@ -107,7 +112,7 @@ public class OwnersResource {
             return templates.ownerDetails(owner);
         }
     }
-    
+
     @POST
     @Path("{ownerId}/edit")
     @Transactional

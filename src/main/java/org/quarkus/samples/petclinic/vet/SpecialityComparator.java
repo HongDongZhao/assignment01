@@ -1,5 +1,7 @@
 package org.quarkus.samples.petclinic.vet;
 
+import org.quarkus.samples.petclinic.model.Specialty;
+
 import java.util.Comparator;
 
 public class SpecialityComparator implements Comparator<Specialty> {

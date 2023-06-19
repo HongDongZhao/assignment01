@@ -1,9 +1,9 @@
 package org.quarkus.samples.petclinic.vet;
 
+import org.quarkus.samples.petclinic.model.Vet;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.xml.bind.annotation.XmlElement;
 
 public class Vets {
     

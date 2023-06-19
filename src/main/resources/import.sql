@@ -51,3 +51,9 @@ INSERT INTO visits(id, pet_id, visit_date, description) VALUES (1001, 1007, '201
 INSERT INTO visits(id, pet_id, visit_date, description) VALUES (1002, 1008, '2013-01-02', 'rabies shot');
 INSERT INTO visits(id, pet_id, visit_date, description) VALUES (1003, 1008, '2013-01-03', 'neutered');
 INSERT INTO visits(id, pet_id, visit_date, description) VALUES (1004, 1007, '2013-01-04', 'spayed');
+
+INSERT INTO users (id, email, password) VALUES (1, 'user1@test.bc.ca', '$2a$10$uWc6XVmI/LFs2Uuld8aOSONTWw1HGcru/mP2qgPC8gR6xzgI.vYKa');
+INSERT INTO users (id, email, password) VALUES (2, 'user2@test.bc.ca', '$2a$10$uWc6XVmI/LFs2Uuld8aOSONTWw1HGcru/mP2qgPC8gR6xzgI.vYKa');
+
+INSERT INTO user_roles (user_id, roles) VALUES (1, 'ROLE_APPLICATION');
+INSERT INTO user_roles (user_id, roles) VALUES (2, 'ROLE_APPLICATION');

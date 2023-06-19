@@ -1,4 +1,4 @@
-package org.quarkus.samples.petclinic.system;
+package org.quarkus.samples.petclinic.rest;
 
 import java.util.Locale;
 
@@ -9,7 +9,10 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import io.quarkus.qute.TemplateInstance;
+import io.quarkus.security.Authenticated;
+import org.quarkus.samples.petclinic.system.TemplatesLocale;
 
+@Authenticated
 @Path("/")
 public class WelcomeResource {
     

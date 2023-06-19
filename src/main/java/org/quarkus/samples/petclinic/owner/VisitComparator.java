@@ -2,7 +2,7 @@ package org.quarkus.samples.petclinic.owner;
 
 import java.util.Comparator;
 
-import org.quarkus.samples.petclinic.visit.Visit;
+import org.quarkus.samples.petclinic.model.visit.Visit;
 
 public class VisitComparator implements Comparator<Visit> {
 

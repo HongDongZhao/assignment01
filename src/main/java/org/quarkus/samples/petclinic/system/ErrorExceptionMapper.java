@@ -15,7 +15,7 @@ public class ErrorExceptionMapper {
 
     @ServerExceptionMapper
     public Response map(Exception exception) {
-        LOG.error("Internal application error", exception);
+        LOG.error("zzz Internal application error", exception);
         return Response.ok(templates.error(exception.getMessage())).header(ERROR_HEADER, true).build();
     }
 

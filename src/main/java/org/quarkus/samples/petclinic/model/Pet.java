@@ -1,4 +1,4 @@
-package org.quarkus.samples.petclinic.owner;
+package org.quarkus.samples.petclinic.model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -17,9 +17,10 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotEmpty;
 
-import org.quarkus.samples.petclinic.visit.Visit;
+import org.quarkus.samples.petclinic.model.visit.Visit;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import org.quarkus.samples.petclinic.owner.VisitComparator;
 
 @Entity
 @Table(name = "pets")
@@ -54,7 +55,7 @@ public class Pet extends PanacheEntity {
 		return this.visits;
 	}
 
-	protected void setVisitsInternal(Collection<Visit> visits) {
+	public void setVisitsInternal(Collection<Visit> visits) {
 		this.visits = new LinkedHashSet<>(visits);
 	}
 

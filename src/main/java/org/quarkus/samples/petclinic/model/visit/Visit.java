@@ -1,4 +1,4 @@
-package org.quarkus.samples.petclinic.visit;
+package org.quarkus.samples.petclinic.model.visit;
 
 import java.time.LocalDate;
 import java.util.Collection;

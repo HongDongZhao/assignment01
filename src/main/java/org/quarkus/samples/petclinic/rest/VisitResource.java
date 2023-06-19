@@ -1,8 +1,9 @@
-package org.quarkus.samples.petclinic.owner;
+package org.quarkus.samples.petclinic.rest;
 
-import org.quarkus.samples.petclinic.system.Templates;
+import io.quarkus.security.Authenticated;
+import org.quarkus.samples.petclinic.model.Pet;
 import org.quarkus.samples.petclinic.system.TemplatesLocale;
-import org.quarkus.samples.petclinic.visit.Visit;
+import org.quarkus.samples.petclinic.model.visit.Visit;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,6 +32,7 @@ public class VisitResource {
     @Inject
     Validator validator;
 
+    @Authenticated
     @GET
     @Path("{ownerId}/pets/{petId}/visits/new")
     @Produces(MediaType.TEXT_HTML)
@@ -38,6 +40,7 @@ public class VisitResource {
         return templates.createOrUpdateVisitForm(Pet.findById(petId), null, new HashMap<>());
     }
 
+    @Authenticated
     @POST
     @Path("{ownerId}/pets/{petId}/visits/new")
     @Produces(MediaType.TEXT_HTML)

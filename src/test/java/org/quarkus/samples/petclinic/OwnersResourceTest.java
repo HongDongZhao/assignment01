@@ -8,7 +8,7 @@ import static org.quarkus.samples.petclinic.system.ErrorExceptionMapper.ERROR_HE
 import io.quarkus.test.common.http.TestHTTPEndpoint;
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
-import org.quarkus.samples.petclinic.owner.OwnersResource;
+import org.quarkus.samples.petclinic.rest.OwnersResource;
 
 @QuarkusTest
 @TestHTTPEndpoint(OwnersResource.class)

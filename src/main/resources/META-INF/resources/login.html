@@ -1,0 +1,134 @@
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+        /* Bordered form */
+        form {
+            border: 3px solid #f1f1f1;
+        }
+
+        /* Full-width inputs */
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        /* Set a style for all buttons */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        /* Add a hover effect for buttons */
+        button:hover {
+            opacity: 0.8;
+        }
+
+        /* Add padding to containers */
+        .container {
+            width:600px;
+            padding: 16px;
+        }
+
+        /* Change styles for span and cancel button on extra small screens */
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+
+            .cancelbtn {
+                width: 100%;
+            }
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: "montserratregular", sans-serif;
+
+        }
+    </style>
+</head>
+
+<body>
+<div id="app">
+
+    <div class="container">
+        <h3> QUARKUS Pet Client - Login </h3>
+        <form  @submit.prevent="login">
+
+            <label for="username"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" id="username" v-model="username" required>
+
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" id="password" v-model="password" required>
+
+            <button type="submit" onclick="login()">Login</button>
+
+        </form>
+    </div>
+</div>
+<script>
+    new Vue({
+      el: '#app',
+      data: {
+        username: '',
+        password: ''
+      },
+      methods: {
+        login() {
+          // Create an object with the username and password
+          const data = {
+            username: this.username,
+            password: this.password
+          };
+
+          // Send the login data to the server
+          fetch('/api/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          })
+          .then(response => {
+            if (response.status == 200) {
+              // Login successful, redirect to the home page
+              console.log(response);
+              console.log('Right username or password');
+              var authorizationHeader = response.headers.get("Authorization");
+              console.log('Authorization', authorizationHeader);
+
+              localStorage.setItem("authorizationHeader", authorizationHeader);
+
+              window.location.href = '/';
+            } else {
+              // Login failed, display an error message
+              alert('Invalid username or password');
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html>

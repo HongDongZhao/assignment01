@@ -1,4 +1,4 @@
-package org.quarkus.samples.petclinic.vet;
+package org.quarkus.samples.petclinic.model;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,6 +14,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import org.quarkus.samples.petclinic.model.Person;
+import org.quarkus.samples.petclinic.model.Specialty;
+import org.quarkus.samples.petclinic.vet.SpecialityComparator;
 
 @Entity
 @Table(name = "vets")
